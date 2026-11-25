@@ -1,0 +1,6 @@
+--!strict
+-- Client entry. The only Script that runs on the client.
+-- Inputs: none. It requires shared or client ModuleScripts and calls start() on each.
+-- Outputs: none. It may present state. It does not grant a reward.
+-- A missing module or a start() error stops this script and leaves the cause on the error.
+-- There are no systems yet, so it finishes without starting one.

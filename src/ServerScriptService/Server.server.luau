@@ -1,0 +1,6 @@
+--!strict
+-- Server entry. The only Script that runs on the server.
+-- Inputs: none. It requires server ModuleScripts and calls start() on each.
+-- Outputs: none. The server decides anything that affects another player, a score, an inventory, or a win.
+-- A missing module or a start() error stops this script and leaves the cause on the error.
+-- There are no systems yet, so it finishes without starting one.

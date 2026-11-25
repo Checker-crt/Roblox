@@ -1,0 +1,36 @@
+---
+description: Code stays standardized, testable, and easy for a human or agent to change
+alwaysApply: true
+---
+
+# Changeable code
+
+- Match the pattern already in the repo. When none exists, add one pattern and record it in `docs/architecture.md`.
+- Name modules and functions for the domain behavior they own.
+- Keep each behavior in one place. Call that place from the edges.
+- Put an explicit contract on every boundary between modules.
+- Handle an error where the caller can act. Keep the original cause and the context.
+- Ship each behavior change with an automated test that fails if that behavior disappears.
+- Keep the diff to the behavior, its contract, and its tests.
+
+## Example
+
+A greeting belongs in one function, called from the page:
+
+```javascript
+// greet.js — the only place that owns the greeting
+export function greet(name) {
+  if (!name) throw new Error("greet requires a name");
+  return `Hello, ${name}`;
+}
+```
+
+```javascript
+// greet.test.js — fails if the greeting disappears
+import { greet } from "./greet.js";
+import assert from "node:assert/strict";
+
+assert.equal(greet("Ryan"), "Hello, Ryan");
+```
+
+The page calls `greet`. It does not assemble the string itself.

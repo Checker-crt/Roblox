@@ -1,0 +1,24 @@
+---
+description: Behavior, tests, and GitHub checks required before work is done
+alwaysApply: true
+---
+
+# Done
+
+Work is done when all of these are true:
+
+- The acceptance criterion is written in `docs/product.md` or the pull request.
+- Automated tests cover the changed behavior and pass locally.
+- GitHub Actions runs those tests on the pull request.
+- A user-facing claim matches behavior that exists in the product.
+- Production deploys only from `main`, and only after the required checks are green.
+
+## Example
+
+A greeting change is done when:
+
+- `docs/product.md` says the page greets the visitor by name.
+- `node --test` passes, including a test that `greet("Ryan")` returns `Hello, Ryan`.
+- The pull request's GitHub Actions workflow runs that same test command.
+- The page shows `Hello, Ryan` because it calls `greet`, and the README says only that.
+- The workflow deploys only on a push to `main` after the test job succeeds.

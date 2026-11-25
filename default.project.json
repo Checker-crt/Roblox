@@ -1,0 +1,32 @@
+{
+  "name": "roblox",
+  "tree": {
+    "$className": "DataModel",
+    "ReplicatedStorage": {
+      "$className": "ReplicatedStorage",
+      "Client": {
+        "$path": "src/ReplicatedStorage/Client.server.luau",
+        "$properties": {
+          "RunContext": "Client"
+        }
+      },
+      "Content": {
+        "$className": "Folder",
+        "$ignoreUnknownInstances": true
+      }
+    },
+    "ServerScriptService": {
+      "$className": "ServerScriptService",
+      "Server": {
+        "$path": "src/ServerScriptService/Server.server.luau",
+        "$properties": {
+          "RunContext": "Server"
+        }
+      },
+      "Content": {
+        "$className": "Folder",
+        "$ignoreUnknownInstances": true
+      }
+    }
+  }
+}
