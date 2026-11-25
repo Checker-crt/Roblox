@@ -14,13 +14,15 @@ A reader can find the spec, the file-to-DataModel map, and the boundary between 
 
 ## Non-goals
 
-- A game loop, scoring, inventory, or win condition.
+- A game loop, inventory, or a win condition.
+- Scoring beyond one point for touching `Workspace.Markers.Lantern` once per life.
 - A published place, packages, or User, Dev, Stable, and Prod places.
 - A production deploy.
 - MeshParts, terrain, lighting, or Workspace layout in Git.
 
 ## Acceptance criteria
 
+- A player who spawns in the yard and touches `Workspace.Markers.Lantern` receives one point. A second touch in the same life does not add another. The client displays the point. One server module owns the count.
 - The Rojo project maps Git code to `ReplicatedStorage` and `ServerScriptService` only.
 - The Rojo project does not map `Workspace`, `Lighting`, or terrain.
 - Each of those two services has a `Content` folder that Rojo leaves alone.
@@ -31,4 +33,4 @@ A reader can find the spec, the file-to-DataModel map, and the boundary between 
 
 ## Claims
 
-- A reader can see which folders Git owns and which the place file owns. Proof: the acceptance criteria above, `project.test.js`, and `docs/architecture.md`.
+- A reader can see which folders Git owns and which the place file owns. Proof: the Rojo layout criteria above, `project.test.js`, and `docs/architecture.md`. The lantern-touch criterion has no claim until a test or a play session shows it.

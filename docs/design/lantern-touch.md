@@ -23,3 +23,15 @@ Kit, only after I allow the upload: add src/ServerScriptService/LanternScore.lua
 
 Pip, after Kit has synced: play the criterion. Spawn, walk to the lantern, touch it, the score is 1, touch it again and the score stays 1, and the console has no errors. Stop play. Report the criterion, the steps you drove, and the console result.
 ```
+
+## Source lantern
+
+Recorded in Blender before export. One mesh named `Lantern`. No 3D generator was enabled, so this mesh was modeled in the open Blender file. The default cube was removed. Camera and light were left as they were.
+
+- Triangles: 488. The Roblox per-mesh limit is 20,000.
+- Size: 0.273 m wide, 0.184 m deep, 0.348 m tall. World bounds from (−0.092, −0.092, 0) to (0.181, 0.092, 0.348) metres. Expected size if 1 metre is 0.28 studs: about 0.98 × 0.66 × 1.24 studs, before the chest-height scale in Studio.
+- Handle: on the +X side. In the front view that looks along +Y, the handle is on the right.
+- Materials, with no image textures. Weathering is a procedural roughness noise on the metal and may flatten to the base color in a GLB.
+  - `LanternMetal`: base color (0.20, 0.15, 0.11), metallic, roughness varied around 0.62.
+  - `LanternGlass`: base color (0.55, 0.72, 0.48), transmission weight 0.92, IOR 1.45.
+  - `LanternGlow`: base color (1.0, 0.58, 0.18), emission color (1.0, 0.45, 0.10), emission strength 6.
